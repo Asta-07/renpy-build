@@ -1,0 +1,9 @@
+[submodule "rapt/prototype/commons"]
+	path = rapt/prototype/commons
+	url = https://github.com/joiplay/commons
+[submodule "rapt/prototype/joipad"]
+	path = rapt/prototype/joipad
+	url = https://github.com/joiplay/joipad
+[submodule "rapt/prototype/sdp"]
+	path = rapt/prototype/sdp
+	url = https://github.com/joiplay/sdp

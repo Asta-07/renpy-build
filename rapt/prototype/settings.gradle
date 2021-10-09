@@ -1,2 +1,2 @@
-include ':renpyandroid', ':app'
-rootProject.name="app"
+include ':sdp', ':commons', ':joipad', ':renpyandroid', ':app'
+rootProject.name="RenPy Plugin for JoiPlay"
