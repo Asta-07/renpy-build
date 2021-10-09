@@ -491,8 +491,7 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
     blocklist = PatternList("blocklist.txt")
     keeplist = PatternList("keeplist.txt")
 
-    default_presplash = plat.path("templates/renpy-presplash.jpg")
-    default_downloading = plat.path("templates/renpy-downloading.jpg")
+    default_presplash = plat.path("templates/android-presplash.jpg")
 
     private_dir, assets_dir = split_renpy(directory)
 
@@ -599,9 +598,6 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
             sdkpath=plat.path("Sdk"),
             )
 
-    if config.update_icons:
-        iconmaker.IconMaker(directory, config)
-
     # Copy the presplash files.
     copy_presplash(directory, "android-presplash", default_presplash)
     
@@ -619,9 +615,9 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
     apkdirs = [ ]
 
     if not bundle:
-        apkdirs.append(plat.path("project/app/build/outputs/apk/release"))
+        apkdirs.append(plat.path("project/app/build/outputs/apk/patreon/release"))
     else:
-        apkdirs.append(plat.path("project/app/build/outputs/bundle/release"))
+        apkdirs.append(plat.path("project/app/build/outputs/bundle/patreon/release"))
 
     for i in apkdirs:
         if os.path.exists(i):
@@ -684,8 +680,8 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
                 "-jar",
                 plat.path("bundletool.jar"),
                 "build-apks",
-                "--bundle=" + plat.path("project/app/build/outputs/bundle/release/app-release.aab"),
-                "--output=" + plat.path("project/app/build/outputs/bundle/release/app-release.apks"),
+                "--bundle=" + plat.path("project/app/build/outputs/bundle/release/app-patreon-release.aab"),
+                "--output=" + plat.path("project/app/build/outputs/bundle/release/app-patreon-release.apks"),
                 "--local-testing",
             ] + install_sdk.get_local_key_properties())
 
@@ -694,7 +690,7 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
                 "-jar",
                 plat.path("bundletool.jar"),
                 "install-apks",
-                "--apks=" + plat.path("project/app/build/outputs/bundle/release/app-release.apks"),
+                "--apks=" + plat.path("project/app/build/outputs/bundle/release/app-patreon-release.apks"),
                 "--adb=" + plat.adb,
             ])
 

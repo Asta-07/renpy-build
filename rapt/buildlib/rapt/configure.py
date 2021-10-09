@@ -78,16 +78,15 @@ def configure(interface, directory, default_name=None, default_version=None):
     if config.name is None:
         config.name = default_name
 
-    config.name = interface.input(__("What is the full name of your application? This name will appear in the list of installed applications."), config.name)
+    config.name = "Ren'Py Plugin for JoiPlay"
 
     if config.icon_name is None:
         config.icon_name = config.name
 
-    config.icon_name = interface.input(__("What is the short name of your application? This name will be used in the launcher, and for application shortcuts."), config.icon_name)
+    config.icon_name = "Ren'Py Plugin for JoiPlay"
 
-    config.package = interface.input(__("What is the name of the package?\n\nThis is usually of the form com.domain.program or com.domain.email.program. It may only contain ASCII letters and dots. It must contain at least one dot."), config.package)
+    config.package = "cyou.joiplay.renpy"
 
-    config.package = config.package.strip().lower()
 
     if not config.package:
         interface.fail(__("The package name may not be empty."))
@@ -117,23 +116,6 @@ def configure(interface, directory, default_name=None, default_version=None):
         interface.fail(__("The version number must contain only numbers and dots."))
 
     config.version = version
-
-    if config.heap_size is None:
-        heap = open(plat.path("project/gradle.properties"), "r")
-        for line in heap:
-            if "org.gradle.jvmargs" in line:
-                heapVal = line
-        heap.close()
-        heapVal = heapVal.replace('org.gradle.jvmargs=-Xmx', "")
-        heapVal = heapVal.replace('g\n', "")
-        config.heap_size = heapVal
-
-    heap_size = interface.input(__("How much RAM do you want to allocate to Gradle?\n\nThis must be a positive integer number."), config.heap_size)
-
-    if not re.match(r'^[\d]+$', config.heap_size):
-        interface.fail(__("The RAM size must contain only numbers."))
-
-    #set_heap_size(config, heap_size, plat.path("project/gradle.properties"))
 
     config.orientation = interface.choice(__("How would you like your application to be displayed?"), [
         ("sensorLandscape", __("In landscape orientation.")),
