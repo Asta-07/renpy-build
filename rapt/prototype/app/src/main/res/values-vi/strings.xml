@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ren\'Py Plugin cho JoiPlay</string>
+    <string name="checking_config">Đang kiểm tra cấu hình plugin…</string>
+    <string name="got_no_data">Không thể lấy dữ liệu từ JoiPlay.</string>
+    <string name="error_message">Lỗi: %1$s</string>
+    <string name="hide_icon">Ẩn biểu tượng khỏi trình khởi chạy.</string>
+    <string name="permission">Sự cho phép</string>
+    <string name="manage_external_storage_permission_message">JoiPlay cần quyền truy cập tất cả các tệp để đọc / ghi các tệp trò chơi. Vui lòng cho phép quyền này để tiếp tục.</string>
+    <string name="iconName">Ren\'Py Plugin cho JoiPlay</string>
+    <string name="appName">Ren\'Py Plugin cho JoiPlay</string>
+</resources>

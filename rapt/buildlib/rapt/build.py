@@ -402,13 +402,7 @@ def split_renpy(directory):
 
 
 GENERATED = [
-    (False, "templates/app-build.gradle", "project/app/build.gradle"),
-    (False, "templates/app-AndroidManifest.xml", "project/app/src/main/AndroidManifest.xml"),
     (False, "templates/app-strings.xml", "project/app/src/main/res/values/strings.xml"),
-    (False, "templates/renpyandroid-AndroidManifest.xml", "project/renpyandroid/src/main/AndroidManifest.xml"),
-    (False, "templates/renpyandroid-strings.xml", "project/renpyandroid/src/main/res/values/strings.xml"),
-    (False, "templates/Constants.java", "project/renpyandroid/src/main/java/org/renpy/android/Constants.java"),
-    (False, "templates/settings.gradle", "project/settings.gradle"),
 ]
 
 COPIED = [
@@ -610,7 +604,15 @@ def build(iface, directory, install=False, bundle=False, launch=False, finished=
 
     # Copy the presplash files.
     copy_presplash(directory, "android-presplash", default_presplash)
-    copy_presplash(directory, "android-downloading", default_downloading)
+    
+    # Copy html files
+    html = plat.path("project/app/src/main/assets/html")
+    info_html = plat.path("templates/info.html")
+    license_html = plat.path("templates/license.html")
+    
+    os.mkdir(html)
+    shutil.copy2(info_html, html)
+    shutil.copy2(license_html, html)
 
     # Find and clean the apkdirs.
 

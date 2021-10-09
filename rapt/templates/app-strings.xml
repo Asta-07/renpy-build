@@ -1,7 +1,14 @@
 <resources>
-    <string name="appName">{{ config.name }}</string>
-    <string name="app_name">{{ config.name }}</string>
-    <string name="iconName">{{ config.icon_name }}</string>
+<string name="appName">Ren\'Py Plugin for JoiPlay</string>
+    <string name="app_name">Ren\'Py Plugin for JoiPlay</string>
+    <string name="iconName">Ren\'Py Plugin for JoiPlay</string>
+    <string name="checking_config">Checking plugin configuration…</string>
+    <string name="got_no_data">Could not get data from JoiPlay.</string>
+    <string name="error_message">Error: %1$s</string>
+    <string name="ok" translatable="false">OK</string>
+    <string name="hide_icon">Hide icon from the launcher.</string>
+    <string name="permission">Permission</string>
+    <string name="manage_external_storage_permission_message">JoiPlay needs all files access permission to read/write game files. Please enable this permission to continue.</string>
     {% if private_version %}
     <string name="private_version">{{ private_version }}</string>
     {% endif %}

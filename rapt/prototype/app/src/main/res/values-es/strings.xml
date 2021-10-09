@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="checking_config">Comprobando configuración del plugin…</string>
+    <string name="got_no_data">Could not get data from JoiPlay.</string>
+    <string name="app_name">Plugin Ren\'Py para JoiPlay</string>
+    <string name="error_message">Error: %1$s</string>
+    <string name="hide_icon">Ocultar el icono del lanzador.</string>
+    <string name="permission">Permiso</string>
+    <string name="manage_external_storage_permission_message">JoiPlay necesita permiso de acceso a todos los archivos para leer / escribir archivos del juego. Habilite este permiso para continuar.</string>
+    <string name="iconName">Plugin Ren\'Py para JoiPlay</string>
+    <string name="appName">Plugin Ren\'Py para JoiPlay</string>
+</resources>
