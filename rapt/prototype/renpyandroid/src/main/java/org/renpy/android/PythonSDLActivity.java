@@ -313,7 +313,7 @@ public class PythonSDLActivity extends SDLActivity {
 
         nativeSetEnv("RENPY_RENDERER","gles");
 
-        if (game.folder.startsWith(Environment.getExternalStorageDirectory().getAbsolutePath())  && (Build.VERSION.SDK_INT < Build.VERSION_CODES.R)){
+        if (!game.folder.startsWith(Environment.getExternalStorageDirectory().getAbsolutePath())  && (Build.VERSION.SDK_INT < Build.VERSION_CODES.R)){
             String id = game.id.isEmpty() ? game.title.replaceAll("/[^\\p{L}\\p{N}]/ug","_") : game.id;
 
             File saveDir = new File(getExternalFilesDir(null).getAbsolutePath() + File.separator + id + File.separator + "saves");
