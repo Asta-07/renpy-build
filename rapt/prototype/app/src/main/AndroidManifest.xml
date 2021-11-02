@@ -38,11 +38,7 @@
             android:noHistory="true"
             >
             <intent-filter>
-                <action android:name="cyou.joiplay.renpy.MainActivity"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-            <intent-filter>
-                <action android:name="com.joiplay.joiplay.renpy.MainActivity"/>
+                <action android:name="cyou.joiplay.renpy.PermissionActivity"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
